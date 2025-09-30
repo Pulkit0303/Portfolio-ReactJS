@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+:root{
+  background-color: black;
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+}
+*{
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black; /* thumb color */
+  border-radius: 9999px;
+}
+
+.cursor{
+  background-color: white;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
