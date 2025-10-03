@@ -2,7 +2,8 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import ContactPage from "./pages/ContactPage";
 import { useEffect, useState } from "react";
-import { mix, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import {CursorProvider} from './context/CursorContext';
 
 export default function App() {
   const [mousePosition,setMousePosition] =useState({
@@ -25,14 +26,25 @@ export default function App() {
 
   const variants = {
     default: {
-      x: mousePosition.x - 32,
-      y: mousePosition.y - 32,
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+    },
+    hovered: {
+      height: 150,
+      width: 150,
+      x: mousePosition.x - 75,
+      y: mousePosition.y - 75,
     }
   }
-
-
+  const mouseEntered =() =>{
+    setCursorVariant("hovered")
+  }
+  const mouseLeaved = () =>{
+    setCursorVariant("default")
+  }
 
   return (
+    <CursorProvider value={{mouseEntered,mouseLeaved}}>
     <div className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory scroll-smooth">
       <motion.div className="cursor"
       variants={variants}
@@ -52,5 +64,6 @@ export default function App() {
       </section>
 
     </div>
+    </CursorProvider>
   );
 }

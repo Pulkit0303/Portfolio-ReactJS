@@ -12,7 +12,7 @@ function PagesLink({href,title}) {
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: 'smooth' });
       }
-    } else if (title.toLowerCase().includes('project')) {
+    } else if (title.toLowerCase().includes('tech stack')) {
       // Scroll to the second section (ProjectPage)
       const projectSection = document.querySelectorAll('section')[1];
       if (projectSection) {

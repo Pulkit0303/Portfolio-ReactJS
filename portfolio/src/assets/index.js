@@ -24,5 +24,5 @@ export {
   Jenkins,
   Linux,
   ReactIcon,
-  TailwindCSS,
+  TailwindCSS
 };
